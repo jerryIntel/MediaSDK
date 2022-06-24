@@ -838,9 +838,9 @@ mfxStatus _mfxSession_1_10::InitEx(mfxInitParam& par)
     }
 
     // get the number of available threads
-    maxNumThreads = 0;
+    maxNumThreads = 8;
     if (par.ExternalThreads == 0) {
-        maxNumThreads = vm_sys_info_get_cpu_num();
+        //maxNumThreads = vm_sys_info_get_cpu_num();
         if (maxNumThreads == 1) {
             maxNumThreads = 2;
         }
